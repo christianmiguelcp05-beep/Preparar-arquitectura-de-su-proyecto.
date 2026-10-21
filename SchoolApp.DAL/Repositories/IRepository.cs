@@ -1,0 +1,14 @@
+namespace SchoolApp.DAL.Repositories;
+
+/// <summary>
+/// Interfaz genérica para operaciones CRUD
+/// </summary>
+public interface IRepository<T> where T : class
+{
+    Task<T?> GetByIdAsync(int id);
+    Task<IEnumerable<T>> GetAllAsync();
+    Task AddAsync(T entity);
+    Task UpdateAsync(T entity);
+    Task DeleteAsync(T entity);
+    Task<bool> SaveAsync();
+}
